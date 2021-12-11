@@ -8,7 +8,7 @@ Our web-based project allows anyone to input any song they wish (as a YouTube li
 
 #### Notes
 
-Please note our initial respository is at [this link](https://github.com/fareskalaboud/oldHYW/).
+Please note our initial respository is at [this link](https://github.com/fareskalaboud/oldHYW/). We removed all the heavy files to keep the repository lightweight.
 
 #### Pre-Requisites
 

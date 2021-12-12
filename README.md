@@ -6,9 +6,9 @@ Inspired by the arcade games Dance Dance Revolution and Just Dance, our web-base
 
 ### Installation Instructions
 
-docker build -t openpose -f openpose-Dockerfile .
-docker run opepose
-docker build -t hyw/openpose:v0 Dockerfile .
+1. `docker build -t openpose -f openpose-Dockerfile .`
+2. `docker run opepose`
+3. `docker build -t hyw/openpose:v0 Dockerfile .`
 
 #### Notes
 

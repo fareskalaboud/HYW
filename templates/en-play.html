@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>DANCE!</h1>
+                        <h2>Once you click START, you will have to dance for 10 seconds :)</h2>
+                        <div class="row" style="text-align: center;">
+                            <div id="first" class="animate__animated animate__fadeIn animate__slow col-12">
+                                <div class="">                                
+                                    <img src="{{ url_for('video_feed') }}" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            // Your application has indicated there's an error
+            window.setTimeout(function() {
+
+                // Move to a new location or you can do something else
+                window.location.href = "/en/score";
+
+            }, 11000);
+        })
+    </script>
+</body>
+
+</html>

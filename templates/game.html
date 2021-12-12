@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h3>Welcome to</h3>
+                        <h3 class="ar" dir="rtl">أهلا بك في</h3>
+                        <h1>Just Dance AI-volution</h1>
+                        <h2>Dance to YOUR Music - <span class="ar">ارقص لأغانيك المفضلة</span></h2>
+                        <div class="row" style="text-align:center; margin-bottom: 10px;">
+                            <div class="col-6">
+                                <p>Please select your language</p>
+                                <div class="mt-25">
+                                    <a href="/en/select"><button class="btn languageBtn">English</button></a>
+                                </div>
+                                <div class="mt-25">
+                                    <a href="/en/how-it-works"><small><p>How does the game work?</p></small></a>
+                                </div>
+                            </div>
+                            <div class="col-6 ar">
+                                <div class="col-6">
+                                    <p class="ar">نرجو اختيار اللغة</p>
+                                    <div class="mt-25">
+                                        <a href="/ar/select"><button class="btn ar languageBtn">عربي</button></a>
+                                    </div>
+                                    <div class="mt-25">
+                                        <a href="/ar/how-it-works"><small><p class="ar">كيف تعمل اللعبة؟</p></small></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            <video height="500px" autoplay loop muted>
+								<source src="{{ url_for('static', filename='frontpage.webm') }}" type="video/webm">
+							  Your browser does not support the video tag.
+							  </video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

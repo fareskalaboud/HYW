@@ -1,0 +1,122 @@
+.ar {
+    font-family: 'El Messiri';
+    font-weight: bolder;
+}
+
+.box {
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 0.3em;
+    font-weight: 500;
+    color: black;
+}
+
+.warning {
+    border: 1px solid rgb(179, 152, 0);
+    background-color: rgb(253, 255, 157);
+}
+
+.error {
+    border: 1px solid rgb(179, 0, 0);
+    background-color: rgb(255, 203, 203);
+}
+
+.success {
+    border: 1px solid rgb(0, 112, 28);
+    background-color: rgb(157, 255, 194);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#intro {
+    height: 400px;
+}
+
+#score {
+    height: 400px;
+}
+
+.score-card {
+    vertical-align: middle;
+    font-size: 35pt;
+}
+
+#random-score {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#score1 {
+    color: rgb(179, 0, 0);
+}
+
+#score2 {
+    color: rgb(179, 152, 0)
+}
+
+#score3 {
+    color: rgb(0, 112, 28)
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto !important;
+    max-width: 70%;
+    max-height: 90%;
+}
+
+#intro {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; */
+}
+
+.languageBtn {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+table,
+td,
+tr,
+tbody,
+#main table tbody tr:nth-child(2n+1) {
+    background-color: #fff !important;
+    border: none !important;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+small {
+    font-size: 10pt;
+}
+
+.yt-card {
+    padding: 15px;
+    margin: 10px 15px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -175px;
+}

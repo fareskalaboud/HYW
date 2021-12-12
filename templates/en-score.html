@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+    </noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>YOUR SCORE</h1>
+                        <h2></h2>
+                        <div class="row" style="text-align: center;">
+                            <div id="first" class="animate__animated animate__fadeIn animate__slow col-12">
+                                <div class="" style="margin-top: 100px;">
+                                    <!-- <img src="{{ url_for('video_feed') }}" > -->
+                                    {% if sc %}
+                                    {% if sc >= 0.5 %}
+                                    <div>
+                                        <img src="{{ url_for('static', filename='img/gold.gif') }}">
+                                    </div>
+                                    <h1 class="mt-25">WHAT A HERO!</h1>
+                                    <h2>You've got KILLER dance moves!</h2>
+                                    <h3>Your score was {{ sc * 100 }}%!</h3>
+                                    {% elif sc >= 0.3 %}
+                                    <div>
+                                        <img src="{{ url_for('static', filename='img/silver.gif') }}">
+                                    </div>
+                                    <h1 class="mt-25">NOT BAD!</h1>
+                                    <h2>You did good, but there's room for improvement!</h2>
+                                    <h3>Your score was {{ sc * 100 }}%!</h3>
+                                    {% else %}
+                                    <div>
+                                        <img src="{{ url_for('static', filename='img/sad.png') }}">
+                                    </div>
+                                    <h1 class="mt-25">Uh-oh!</h1>
+                                    <h2>You need a lot more practice!</h2>
+                                    <h3>Your score was {{ sc * 100 }}%!</h3>
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                                <div class="mt-25">
+                                    <a href="/en/ai/play"><button style="background-color: rgb(255, 225, 249); color: white;" class="btn languageBtn">PLAY AGAIN</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script>
+        // $(document).ready(function() {
+        //     // Your application has indicated there's an error
+        //     window.setTimeout(function() {
+
+        //         // Move to a new location or you can do something else
+        //         window.location.href = "/en/score";
+
+        //     }, 11000);
+        // })
+    </script>
+</body>
+
+</html>

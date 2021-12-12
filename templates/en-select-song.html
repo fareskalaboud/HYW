@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12 animate__animated" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>Just Dance AI-volution</h1>
+                        <h2 class="mb-25">Select a song.</h2>
+                        <div class="row" style="text-align: center;">
+                            <div id="first" class="col-12">
+                                <form method="post" action="/en/ai/select/search" class="row">
+                                    <div class="col-2"></div>
+                                    <input class="col-6" type="text" id="searchterms" name="searchterms" placeholder="Michael Jackson thriller"><br>
+                                    <input class="col-2" type="submit" value="Search" onclick="submitBtnClicked()">
+                                    <div class="col-2"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row animate__animated" id="search_results">
+                            <div class="col-8">
+                                <h1>Search Results</h1>
+                                {% if results %} {%for i in results%}
+                                <div class="row yt-card" id="{{ i.id }}">
+                                    <div class="col-3 yt-thumbnail">
+                                        <img height="60px" src="{{ i.thumbnails[0].url }}">
+                                    </div>
+                                    <div class="col-7 yt-title" style="display: table-cell; vertical-align: middle">
+                                        <h3>{{ i.title[:80] }}</h3>
+                                    </div>
+                                    <div class="col-2 yt-select" style="display: table-cell; vertical-align: middle">
+                                        <form method="POST">
+                                            <input type="text" id="youtubeid" name="youtubeid" value="https://www.youtube.com/watch?v={{ i.id }}" style="display:none;"></input>
+                                            <button class="btn" style="min-width: auto;" onclick="submitBtnClicked()">Select</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                {%endfor%} {% endif %}
+                            </div>
+                            <div class="col-4" style="border-left: 1px grey solid;">
+                                <h1>Quick Play</h1>
+                                <div class="row yt-card" id="quickplay1">
+                                    <div class="col-2 yt-thumbnail">
+                                        <img height="30px" src="https://i.ytimg.com/vi/xXfZIhUV3ms/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnPDL1QQFtwOHuoY7WMzK3I6WwXw">
+                                    </div>
+                                    <div class="col-7 yt-title" style="display: table-cell; vertical-align: middle">
+                                        <h3>Bella Ciao <small>(de Libertdad)</small></h3>
+                                        <p>Salsa Music</p>
+                                    </div>
+                                    <div class="col-3 yt-select" style="display: table-cell; vertical-align: middle">
+                                        <form method="POST">
+                                            <input type="text" id="youtubeid" name="youtubeid" value="https://www.youtube.com/watch?v=xXfZIhUV3ms" style="display:none;"></input>
+                                            <button class="btn" style="min-width: auto;" onclick="submitBtnClicked()">Select</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row yt-card" id="quickplay2">
+                                    <div class="col-2 yt-thumbnail">
+                                        <img height="30px" src="https://i.ytimg.com/vi/h_D3VFfhvs4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCITECBPv6lKdRQEIxpxKYS62YPIw">
+                                    </div>
+                                    <div class="col-7 yt-title" style="display: table-cell; vertical-align: middle">
+                                        <h3>Smooth Criminal</h3>
+                                        <p>Michael Jackson Music</p>
+                                    </div>
+                                    <div class="col-3 yt-select" style="display: table-cell; vertical-align: middle">
+                                        <form method="POST">
+                                            <input type="text" id="youtubeid" name="youtubeid" value="https://www.youtube.com/watch?v=h_D3VFfhvs4" style="display:none;"></input>
+                                            <button class="btn" style="min-width: auto;" onclick="submitBtnClicked()">Select</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row yt-card" id="quickplay3">
+                                    <div class="col-2 yt-thumbnail">
+                                        <img height="30px" src="https://i.ytimg.com/vi/Y0UDfqU-q1Q/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAt5suJYZoOlb05R8G_HAbI5RHazg">
+                                    </div>
+                                    <div class="col-7 yt-title" style="display: table-cell; vertical-align: middle">
+                                        <h3>Léo Delibes</h3>
+                                        <p>Ballet Music</p>
+                                    </div>
+                                    <div class="col-3 yt-select" style="display: table-cell; vertical-align: middle">
+                                        <form method="POST">
+                                            <input type="text" id="youtubeid" name="youtubeid" value="https://www.youtube.com/watch?v=Y0UDfqU-q1Q" style="display:none;"></input>
+                                            <button class="btn" style="min-width: auto;" onclick="submitBtnClicked()">Select</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden animate__animated" id="loading">
+                    <img class="centered" src="/static/img/second.gif" />
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-BoldOblique.woff2') format('woff2'),
+        url('../webfonts/Serpentine-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-Bold.woff2') format('woff2'),
+        url('../webfonts/Serpentine-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-Light.woff2') format('woff2'),
+        url('../webfonts/Serpentine-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-Medium.woff2') format('woff2'),
+        url('../webfonts/Serpentine-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-MediumOblique.woff2') format('woff2'),
+        url('../webfonts/Serpentine-MediumOblique.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Serpentine';
+    src: url('../webfonts/Serpentine-LightOblique.woff2') format('woff2'),
+        url('../webfonts/Serpentine-LightOblique.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+

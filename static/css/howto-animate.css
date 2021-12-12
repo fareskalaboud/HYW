@@ -1,0 +1,19 @@
+#zeroth.animate__animated {
+    --animate-duration: 0.5s;
+}
+
+#first.animate__animated {
+    --animate-duration: 0.5s;
+}
+
+#second.animate__animated {
+    --animate-duration: 0.5s;
+}
+
+#third.animate__animated {
+    --animate-duration: 0.5s;
+}
+
+#fourth.animate__animated {
+    --animate-duration: 0.5s;
+}

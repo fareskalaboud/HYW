@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="is-preload" dir="rtl">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>Just Dance AI-volution</h1>
+                        <h2 class="mb-25 ar">اختر الأغنية</h2>
+                        <div class="row" style="text-align: center;">
+                            <div id="first" class="col-12">
+                                <form method="post" action="/ar/ai/select/search" class="row">
+                                    <div class="col-2"></div>
+                                    <input class="col-6" type="text" id="searchterms" name="searchterms" class="ar" placeholder="أنا مش نجيب سويرس"><br>
+                                    <input class="col-2" type="submit" class="ar" value="ابحث" onclick="submitBtnClicked()">
+                                    <div class="col-2"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-8" style="border-left: 1px grey solid;">
+                                <h1 class="ar">نتائج البحث</h1>
+                                {% if results %} {%for i in results%}
+                                <div class="row yt-card" id="{{ i.id }}">
+                                    <div class="col-3 yt-thumbnail">
+                                        <img height="60px" src="{{ i.thumbnails[0].url }}">
+                                    </div>
+                                    <div class="col-7 yt-title" style="display: table-cell; vertical-align: middle">
+                                        <h3 class="ar">{{ i.title }}</h3>
+                                    </div>
+                                    <div class="col-2 yt-select" style="display: table-cell; vertical-align: middle">
+                                        <form method="POST">
+                                            <input type="text" id="youtubeid" name="youtubeid" value="https://www.youtube.com/watch?v={{ i.id }}" style="display:none;"></input>
+                                            <button class="btn ar" style="min-width: auto;" onclick="submitBtnClicked()">اختر</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                {%endfor%} {% endif %}
+                            </div>
+                            <div class="col-4">
+                                <h1 class="ar">العب الآن</h1>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden animate__animated" id="loading">
+                    <img class="centered" src="/static/img/second.gif" />
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

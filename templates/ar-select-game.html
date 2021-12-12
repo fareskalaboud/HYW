@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="is-preload" dir="rtl">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>Just Dance AI-volution</h1>
+                        <h2 class="mb-25 ar">اختر نوع اللعبة.</h2>
+                        <div class="row" style="text-align: center;">
+                            <div id="first" class="animate__animated animate__fadeInRight animate__slow col-6">
+                                <div>
+                                    <img src="{{ url_for('static', filename='img/record.png') }}">
+                                </div>
+                                <h2 class="ar">سجل رقصتي الخاصة!</h2>
+                                <p class="ar" style="line-height: 35px; margin-top: 15px">سجل رقصة خاصة بك ، وسوف يتعلمها نموذج الذكاء الاصطناعي ويحفظها حتى تتمكن أنت وأصدقاؤك من اللعب باستخدامها.</p>
+                                <div class="mt-25">
+                                    <a href="/en/rec/select"><button style="background-color: rgb(255, 225, 249); color: white;" class="btn ar languageBtn">التالي</button></a>
+                                </div>
+                            </div>
+                            <div id="second" class="animate__animated animate__fadeInLeft animate__slow col-6">
+                                <div>
+                                    <img src="{{ url_for('static', filename='img/ai.png') }}">
+                                </div>
+                                <h2 class="ar">العب ضد الذكاء الاصطناعي!</h2>
+                                <p class="ar" style="line-height: 35px; margin-top: 15px">العب ضد الذكاء الاصطناعي الذي سيقوم بإنشاء سلسلة من حركات الرقص خصيصًا للأغنية التي ستقوم باختيارها.</p>
+                                <div class="mt-25">
+                                    <a href="/en/ai/select"><button style="background-color: rgb(219, 250, 255); color: white;" class="btn ar languageBtn">التالي</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

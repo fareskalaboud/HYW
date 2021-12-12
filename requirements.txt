@@ -1,0 +1,5 @@
+Flask
+pytube
+moviepy
+mediapipe
+youtube-search-python

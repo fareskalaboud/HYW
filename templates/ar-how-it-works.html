@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>HYW</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <noscript>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+	</noscript>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ddrfont.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/howto-animate.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=El+Messiri">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body class="is-preload" dir="rtl">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main row">
+                <div id="youtube_url_form_container" class="col-12" style="text-align: center;">
+                    {% if error %}
+                    <div id="box-er" class="box error">{{ error }}</div>{% endif %} {% if success %}
+                    <div id="box-sc" class="box success">{{ success }}</div>{% endif %} {% if warning %}
+                    <div id="box-wr" class="box warning">{{ warning }}</div>{% endif %}
+                    <div>
+                        <h1>Just Dance AI-volution</h1>
+                        <h3 class="mb-25 ar">لعبة تفاعلية تجمع بين الذكاء الاصطناعي والفن والموسيقى والرقص.</h3>
+                        <h4 id="zeroth" class="ar mb-25 animate__animated animate__fadeInDown">كيف تعمل؟</h4>
+                        <div class="row">
+                            <div id="first" class="animate__animated animate__fadeInDown animate__delay-2s animate__slow col-4">
+                                <div style="width: 400px; height: 400px;">
+                                    <img style="max-width: 400px" src="{{ url_for('static', filename='img/first.jpg') }}">
+                                </div>
+                                <p style="line-height: 35px; margin-top: 15px" class="ar">قم باختيار أغنيتك المفضلة من يوتيوب، وسنقوم بجمع أول ٣٠ ثانية من يوتيوب.</p>
+                            </div>
+                            <div id="second" class="animate__animated animate__fadeInDown animate__delay-3s animate__slow col-4">
+                                <div style="width: 400px; height: 400px;">
+                                    <img src="{{ url_for('static', filename='img/second.gif') }}">
+                                </div>
+                                <p style="line-height: 35px; margin-top: 15px" class="ar">نقوم تجهيز حركات رقص بمعالجة الأغنية باستخدام نموذج الذكاء الاصطناعي.</p>
+                            </div>
+                            <div id="third" class="animate__animated animate__fadeInDown animate__delay-4s animate__slow col-4">
+                                <video autoplay loop muted style="width: 400px; height: 400px">
+                                    <source src="{{ url_for('static', filename='img/third.webm') }}" type="video/webm">
+                                Your browser does not support the video tag.
+                                </video>
+                                <p style="line-height: 35px; margin-top: 15px" class="ar">سجّل رقصتك أو العب ضد حركات الرقص التي أنشأها الذكاء الاصطناعي.</p>
+                            </div>
+                            <div id="fourth" class="mt-25 animate__animated animate__fadeInDown animate__delay-5s animate__slow col-12">
+                                <a href="/en/select"><button class="btn ar languageBtn">التالي</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

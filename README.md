@@ -25,7 +25,7 @@ Please note our initial respository is at [this link](https://github.com/fareska
 - [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 #### Run Instructions
 
-- Build the Learning2Dance docker image and place the Learning2Dance folder inside the HYW directory
+- Build the [Learning2Eance](https://github.com/verlab/Learning2Dance_CAG_2020) docker image and place the Learning2Dance folder inside the HYW directory
 - Connect the webcam via USB to your machine
 - Run this command from inside the HYW directory: `sudo nvidia-docker run -u root -it --device=/dev/video0 --device=/dev/video1 --network host -v $(pwd):/workspace hyw/openpose:v0` 
 - Run `python3 main.py`
